@@ -837,7 +837,7 @@ class TestHBNBCommand_all(unittest.TestCase):
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("City.all()"))
             self.assertIn("City", output.getvalue().strip())
-            elf.assertNotIn("BaseModel", output.getvalue().strip())
+            self.assertNotIn("BaseModel", output.getvalue().strip())
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("Amenity.all()"))
             self.assertIn("Amenity", output.getvalue().strip())
